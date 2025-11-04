@@ -26,7 +26,8 @@ def make_tools(allow_search: bool):
         return []
 
 def get_response_from_ai_agents(llm_id, query, allow_search, system_prompt):
-    llm = ChatOpenAI(model=llm_id)
+    # llm = ChatOpenAI(model=llm_id)
+    llm = ChatGroq(model=llm_id)
     tools = make_tools(allow_search)
 
     # Build a prompt that injects your system prompt, then hands control to the agent messages
